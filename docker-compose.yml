@@ -1,0 +1,31 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mindlog-sql
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Your_password123"
+      ACCEPT_EULA: "Y"
+    networks:
+      - mindlog-net
+
+  mindlog:
+    build:
+      context: .
+      dockerfile: MindLog/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MindLogDb;User=sa;Password=Your_password123;TrustServerCertificate=True;
+    networks:
+      - mindlog-net
+
+networks:
+  mindlog-net:
+
+volumes:
+  sql_data:

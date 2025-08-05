@@ -1,0 +1,19 @@
+﻿@model MindLog.Models.ViewModels.MoodEntryViewModel
+
+@{
+    ViewData["Title"] = "Delete Mood Entry";
+}
+
+<h1>Are you sure?</h1>
+
+<div>
+    <h4>Mood: @Model.Mood</h4>
+    <p>Note: @Model.Note</p>
+    <p>Date: @Model.Date.ToShortDateString()</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
