@@ -63,13 +63,13 @@ Example:
 
 Run inside MindLogApp : 
 
--docker stop mindlog-app ( if its running )
+- docker stop mindlog ( if its running )
 
--docker rm mindlog-app ( if you want to remove it )
+- docker rm mindlog ( if you want to remove it )
 
--docker compose build
+- docker compose build
 
--docker compose up -d  or docker-compose up --build ( to rebuild )
+- docker compose up -d  or docker-compose up --build ( to rebuild )
 
 ## Author
 
