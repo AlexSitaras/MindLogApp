@@ -60,7 +60,11 @@ Example:
 "ConnectionStrings": {
 "DefaultConnection": "Server=sqlserver;Database=MindLogDb;User=sa;Password=Your_password123;TrustServerCertificate=True;"
 }
-
+Run inside MindLogApp : 
+-docker stop mindlog-app ( if its running )
+-docker rm mindlog-app ( if you want to remove it )
+-docker compose build
+-docker compose up -d  or docker-compose up --build ( to rebuild )
 
 ## Author
 
