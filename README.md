@@ -70,6 +70,7 @@ Run inside MindLogApp :
 - docker compose build
 
 - docker compose up -d  or docker-compose up --build ( to rebuild )
+- use > dotnet ef database update ( for database update )
 
 ## Author
 
