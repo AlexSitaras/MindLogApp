@@ -41,8 +41,12 @@ namespace MindLog.Controllers.Web
         // GET: /MoodEntries/Create
         public IActionResult Create()
         {
-            ViewBag.Moods = GetMoodOptions();
-            return View(new MoodEntryViewModel { Date = System.DateTime.Today });
+            var vm = new MoodEntryViewModel
+            {
+                Date = DateTime.Today,
+                MoodOptions = GetMoodOptions()
+            };
+            return View(vm);
         }
 
         // POST: /MoodEntries/Create
@@ -52,7 +56,7 @@ namespace MindLog.Controllers.Web
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Moods = GetMoodOptions();
+                vm.MoodOptions = GetMoodOptions();
                 return View(vm);
             }
 
@@ -69,7 +73,7 @@ namespace MindLog.Controllers.Web
 
             var vm = _mapper.Map<MoodEntryViewModel>(dto);
 
-            ViewBag.Moods = GetMoodOptions();
+            vm.MoodOptions = GetMoodOptions();
             return View(vm);
         }
 
@@ -81,7 +85,7 @@ namespace MindLog.Controllers.Web
             if (id != vm.Id) return BadRequest();
             if (!ModelState.IsValid)
             {
-                ViewBag.Moods = GetMoodOptions();
+                vm.MoodOptions = GetMoodOptions();
                 return View(vm);
             }
 

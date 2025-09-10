@@ -11,7 +11,7 @@
     <div class="form-group">
         <label asp-for="Mood"></label>
         @Html.DropDownListFor(m => m.Mood,
-                 (IEnumerable<SelectListItem>)ViewBag.Moods,
+                 Model.MoodOptions,
                  "Select mood...",
                  new { @class = "form-control" })
         <span asp-validation-for="Mood" class="text-danger"></span>

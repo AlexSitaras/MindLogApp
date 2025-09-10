@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MindLog.Models.ViewModels
@@ -16,5 +17,7 @@ namespace MindLog.Models.ViewModels
         [Required(ErrorMessage = "Date is required")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+
+        public IEnumerable<SelectListItem> MoodOptions { get; set; } = new List<SelectListItem>();
     }
 }

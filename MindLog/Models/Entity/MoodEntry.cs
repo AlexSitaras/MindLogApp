@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MindLog.Models.Entity
@@ -14,5 +15,6 @@ namespace MindLog.Models.Entity
 
         [Required]
         public DateTime Date { get; set; }
+
     }
 }
