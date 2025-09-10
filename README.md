@@ -61,6 +61,16 @@ Example:
 "DefaultConnection": "Server=sqlserver;Database=MindLogDb;User=sa;Password=Your_password123;TrustServerCertificate=True;"
 }
 
+Run inside MindLogApp : 
+
+- docker stop mindlog ( if its running )
+
+- docker rm mindlog ( if you want to remove it )
+
+- docker compose build
+
+- docker compose up -d  or docker-compose up --build ( to rebuild )
+- use > dotnet ef database update ( for database update )
 
 ## Author
 
