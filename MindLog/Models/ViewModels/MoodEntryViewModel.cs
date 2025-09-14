@@ -18,6 +18,8 @@ namespace MindLog.Models.ViewModels
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
+        public string? Prevmood { get; set; }
+
         public IEnumerable<SelectListItem> MoodOptions { get; set; } = new List<SelectListItem>();
     }
 }

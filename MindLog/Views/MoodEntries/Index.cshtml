@@ -1,12 +1,17 @@
 ﻿@model List<MindLog.Models.ViewModels.MoodEntryViewModel>
-
 @{
     ViewData["Title"] = "Mood Entries";
 }
 
 <h1>Mood Entries</h1>
 
+<h2>My Μood Statistics: <a class="btn btn-sm btn-warning" asp-controller="MoodIndex" asp-action="Index">View</a> </h2>
+
+
+<lr></lr>
+<a class="btn btn-primary mb-3" asp-controller="MoodIndex" asp-action="Index">My Μood Statistics View</a>
 <a class="btn btn-primary mb-3" asp-action="Create">New Entry</a>
+</lr>
 
 <table class="table table-bordered">
     <thead>

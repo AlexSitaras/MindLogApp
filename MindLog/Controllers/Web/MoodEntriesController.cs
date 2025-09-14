@@ -34,7 +34,13 @@ namespace MindLog.Controllers.Web
         public async Task<IActionResult> Index()
         {
             var dtos = await _service.GetAllAsync();
+            var prevmood = dtos
+                .GroupBy(m => m.Mood)
+                .OrderByDescending(g => g.Count())
+                .Select(g => g.Key)
+                .FirstOrDefault();
             var vms = _mapper.Map<List<MoodEntryViewModel>>(dtos);
+            ViewBag.PrevMood = prevmood;
             return View(vms);
         }
 
