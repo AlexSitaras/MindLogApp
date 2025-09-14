@@ -23,14 +23,14 @@ namespace MindLog.Controllers.Web
             var dtos = await _service.GetAllAsync();
             var vms = _mapper.Map<List<MoodEntryViewModel>>(dtos);
 
-            // Υπολογισμός κυρίαρχου mood
+            
             var prevailingMood = dtos
                 .GroupBy(m => m.Mood)
                 .OrderByDescending(g => g.Count())
                 .Select(g => g.Key)
                 .FirstOrDefault();
 
-            // Υπολογισμός στατιστικών
+           
             int total = dtos.Count;
             var stats = dtos
                 .GroupBy(m => m.Mood)
